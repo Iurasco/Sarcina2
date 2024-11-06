@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Uimitoare</title>
+    <style>
+        /* Resetarea stilurilor implicite */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Fundal animat cu gradient dinamic */
+        body {
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff6a00, #ee0979, #ff6a00);
+            background-size: 300% 300%;
+            animation: gradient-animation 5s ease infinite;
+        }
+
+        /* Animație de schimbare a gradientului de fundal */
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Stiluri pentru cercuri animate */
+        .circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: move-circle 6s ease-in-out infinite;
+        }
+
+        /* Mișcare aleatorie a cercurilor */
+        @keyframes move-circle {
+            0% {
+                transform: translate(10%, 10%);
+            }
+            25% {
+                transform: translate(80%, 20%);
+            }
+            50% {
+                transform: translate(30%, 70%);
+            }
+            75% {
+                transform: translate(60%, 50%);
+            }
+            100% {
+                transform: translate(10%, 10%);
+            }
+        }
+
+        /* Poziționarea și stilul textului */
+        .content {
+            position: relative;
+            z-index: 10;
+            color: white;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fade-in 2s ease-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            animation: fade-in 3s ease-out;
+        }
+
+        /* Animația de apariție a textului */
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stilul pentru butonul interactiv */
+        .color-change-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .color-change-button:hover {
+            background-color: #2ecc71;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Cercuri animate -->
+    <div class="circle" style="top: 20%; left: 10%;" id="circle1"></div>
+    <div class="circle" style="top: 40%; left: 60%;" id="circle2"></div>
+    <div class="circle" style="top: 70%; left: 30%;" id="circle3"></div>
+
+    <!-- Conținutul principal -->
+    <div class="content">
+        <h1>🎉 Bun venit pe pagina uimitoare! 🎉</h1>
+        <p>Aici se întâmplă magia! Pășește în lumea animațiilor și interactivității.</p>
+        <button class="color-change-button" onclick="changeBackgroundColor()">Schimbă Culoarea!</button>
+    </div>
+
+    <script>
+        // Funcție pentru schimbarea aleatorie a culorii fundalului
+        function changeBackgroundColor() {
+            const colors = ['#3498db', '#e74c3c', '#9b59b6', '#2ecc71', '#f39c12'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
